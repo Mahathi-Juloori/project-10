@@ -14,7 +14,6 @@ let isSepia=false;
 const activeBtnColor="#4896fcff";
 const btnColor="#ffdab3"
 
-// Slider value elements
 const brightnessValue=document.getElementById("brightnessValue");
 const contrastValue=document.getElementById("contrastValue");
 const saturationValue=document.getElementById("saturationValue");
@@ -34,7 +33,6 @@ image.onload=()=>{
   canvas.height=image.height;
   canvas.width=image.width;
   ctx.drawImage(image,0,0,canvas.width,canvas.height)
-  // Show canvas, hide placeholder
   canvas.classList.add("active");
   placeholder.classList.add("hidden");
 }
@@ -66,7 +64,6 @@ function handleReset(){
   saturationBtn.value=100;
   blurBtn.value=0;
   
-  // Reset display values
   brightnessValue.textContent=100;
   contrastValue.textContent=100;
   saturationValue.textContent=100;
@@ -104,7 +101,6 @@ function handleDownload(){
   document.body.removeChild(anchorTag)
 }
 
-// Event listeners for sliders with value display
 brightnessBtn.addEventListener("input",()=>{
   updateSliderValue(brightnessBtn, brightnessValue);
   applyBrightness();
@@ -126,3 +122,4 @@ grayScaleBtn.addEventListener("click",grayScale)
 resetBtn.addEventListener("click",handleReset)
 sepiaBtn.addEventListener("click",handleSepiaFilter)
 downloadBtn.addEventListener("click",handleDownload)
+
