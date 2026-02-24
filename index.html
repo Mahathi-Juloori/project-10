@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photon Lab - Image Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="controls">
+        <div class="logo">
+          <span class="logo-icon">✨</span>
+          <h1>Photon Lab</h1>
+        </div>
+        <div class="inputContainer">
+          <label class="file-label">
+            <input class="btnfile" type="file" id="inputFile" accept="image/*" />
+            <span class="file-btn">📁 Choose Image</span>
+          </label>
+        </div>
+        <div class="slider-group">
+          <div class="slider-header">
+            <label for="brightness">☀️ Brightness</label>
+            <span class="slider-value" id="brightnessValue">100</span>
+          </div>
+          <input id="brightness" type="range" min="0" max="200" value="100" />
+        </div>
+        <div class="slider-group">
+          <div class="slider-header">
+            <label for="contrast">◐ Contrast</label>
+            <span class="slider-value" id="contrastValue">100</span>
+          </div>
+          <input id="contrast" type="range" min="0" max="200" value="100" />
+        </div>
+        <div class="slider-group">
+          <div class="slider-header">
+            <label for="saturation">🎨 Saturation</label>
+            <span class="slider-value" id="saturationValue">100</span>
+          </div>
+          <input id="saturation" type="range" min="0" max="200" value="100" />
+        </div>
+        <div class="slider-group">
+          <div class="slider-header">
+            <label for="blur">🌫️ Blur</label>
+            <span class="slider-value" id="blurValue">0</span>
+          </div>
+          <input id="blur" type="range" min="0" max="30" value="0" />
+        </div>
+        <div class="buttonContainer">
+          <button id="grayScale" class="btn">🔘 GrayScale</button>
+          <button id="sepia" class="btn">🟤 Sepia</button>
+          <button id="reset" class="btn">↺ Reset</button>
+        </div>
+        <button id="downloadBtn" class="download-btn">⬇️ Download Image</button>
+      </div>
+      <div class="canvasContainer">
+        <div class="canvas-wrapper">
+          <div class="placeholder" id="placeholder">
+            <div class="placeholder-icon">🖼️</div>
+            <p>No image loaded</p>
+            <p class="placeholder-hint">Choose an image to start editing</p>
+          </div>
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
